@@ -15,10 +15,7 @@ DATABASE_URL = f"postgresql+asyncpg://postgres:{PGPASSWORD}@viaduct.proxy.rlwy.n
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:3000",  # Add your development frontend URL
-    "https://react-vite-postgres-gh-production.up.railway.app",  # Add your production frontend URL
-]
+origins = ["*"]  # Update this to the domain of your frontend app
 
 app.add_middleware(
     CORSMiddleware,
